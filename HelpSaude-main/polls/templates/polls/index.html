@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+.<html lang="pt-br">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,7 @@
     font: normal 15pt arial;
     color: white;
     text-align: center;
+    text-shadow: 2px 2px 2px black;
 }
 
 section
@@ -30,24 +31,92 @@ section
 h1
 {
     font-family: 'Satisfy', cursive;
-    font-size: 35pt
+    font-size: 35pt;
+    text-shadow: 2px 2px 2px black;
 }
     </style>
+    <script>
+        function mostrarDiv() {
+          var select = document.getElementById("meu-select");
+          var divs = document.getElementsByClassName("minhas-divs");
+    
+          // Esconde todas as divs
+          for (var i = 0; i < divs.length; i++) {
+            divs[i].style.display = "none";
+          }
+    
+          // Mostra a div selecionada
+          var divSelecionada = document.getElementById(select.value);
+          divSelecionada.style.display = "block";
+        }
+      </script>
 </head>
 <body>
     <header>
         <h1>HelpSaude+</h1>
     </header>
+    <label for="">Selecione uma unidade:</label>
+    <select id="meu-select" onchange="mostrarDiv()">
+        <option value="Div1">Hospitais</option>
+        <option value="Div2">UPAs</option>
+        <option value="Div3">Farmácias</option>
+        <option value="Div4">Emergências</option>
+        <option value="Div5">Clínicas</option>
+    </select>
 
+    <script>
+        $(document).ready(function() {
+            $('#estado').select2();
+        });
+    </script>
     <section>
 
         <div id="mensagem">
             
         </div>
         
-        <div id="espaco">
-              o conteudo ficará aqui
+        <div id="Div1" class="minhas-divs" style="display: none;">
+            <iframe 
+            width="500" 
+            height="520" 
+            style="border:0" 
+            loading="lazy" allowfullscreen
+            src="https://www.google.com/maps/embed/v1/search?q=Hospital+Fortaleza,CE&key=AIzaSyCkU__oirZx_Ji2ZyvmNmMGGAlmGekHU7E"></iframe>
         </div>
+        <div id="Div2" class="minhas-divs" style="display: none;">
+            <iframe 
+            width="500" 
+            height="520" 
+            style="border:0" 
+            loading="lazy" allowfullscreen
+            src="https://www.google.com/maps/embed/v1/search?q=UPA+Fortaleza,CE&key=AIzaSyCkU__oirZx_Ji2ZyvmNmMGGAlmGekHU7E"></iframe>
+        </div>
+        <div id="Div3" class="minhas-divs" style="display: none;">
+            <iframe 
+            width="500" 
+            height="520" 
+            style="border:0" 
+            loading="lazy" allowfullscreen
+            src="https://www.google.com/maps/embed/v1/search?q=Farmácia+Drogaria,CE+Fortaleza&key=AIzaSyCkU__oirZx_Ji2ZyvmNmMGGAlmGekHU7E"></iframe>
+        </div>
+        <div id="Div4" class="minhas-divs" style="display: none;">
+            <iframe 
+            width="500" 
+            height="520" 
+            style="border:0" 
+            loading="lazy" allowfullscreen
+            src="https://www.google.com/maps/embed/v1/search?q=Emergencia+Fortaleza,CE&key=AIzaSyCkU__oirZx_Ji2ZyvmNmMGGAlmGekHU7E"></iframe>
+        </div>
+        <div id="Div5" class="minhas-divs" style="display: none;">
+            <iframe 
+            width="500" 
+            height="520" 
+            style="border:0" 
+            loading="lazy" allowfullscreen
+            src="https://www.google.com/maps/embed/v1/search?q=Clinicas+Fortaleza,CE&key=AIzaSyCkU__oirZx_Ji2ZyvmNmMGGAlmGekHU7E"></iframe>
+        </div>
+
+       
     </section>
 </body>
 </html>
